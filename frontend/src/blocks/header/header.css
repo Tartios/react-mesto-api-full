@@ -1,0 +1,23 @@
+@import url('./__nav/header__nav.css');
+@import url('./__profile/header__profile.css');
+@import url('./__logout-button/header__logout-button.css');
+
+.header {
+    background-image: url(../../images/logo.svg);
+    background-repeat: no-repeat;
+    min-height: 74px;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid #545454;
+    margin: 45px auto 40px;
+}
+
+
+@media screen and (max-width: 590px) {
+    .header {
+        background-image: url(../../images/logo-light.svg);
+        background-position-x: 9%;
+        min-height: 56px;
+        margin: 28px auto 42px;
+    }
+}

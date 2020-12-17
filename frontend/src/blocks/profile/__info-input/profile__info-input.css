@@ -1,0 +1,9 @@
+.profile__info-input {
+    color: #ffffff;
+}
+
+@media screen and (max-width: 590px) {
+    .profile__info-input {
+        margin: 0 1px 0 auto;
+    }
+}

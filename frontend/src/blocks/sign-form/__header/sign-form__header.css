@@ -1,0 +1,11 @@
+.sign-form__header {
+    font-family: Inter;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    color: white;
+    width: 358px;
+    margin-bottom: 50px;
+    justify-content: center;
+    text-align: center;
+}

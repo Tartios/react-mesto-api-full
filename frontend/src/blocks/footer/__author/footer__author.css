@@ -1,0 +1,10 @@
+.footer__author {
+    color: #545454;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 590px) {
+    .footer__author {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,20 @@
+.foto-grid__delete-button {
+    background-image: url(../../../images/Trash.svg);
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    border: none;
+    position: absolute;
+    width: 18px;
+    height: 20px;
+    right: 15px;
+    top: 18px;
+}
+
+.foto-grid__delete-button:focus {
+    outline: none;
+}
+
+.foto-grid__delete-button:hover {
+    opacity: .4;
+}

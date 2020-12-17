@@ -1,0 +1,5 @@
+.popup__imgSrc {
+    object-fit: cover;
+    max-height: 75vh;
+    padding-bottom: 10px;
+}

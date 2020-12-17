@@ -1,0 +1,9 @@
+.sign-form__input {
+    width: 358px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-bottom: 2px solid #CCC;
+    height: 27px;
+    margin-bottom: 30px;
+}
