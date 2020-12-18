@@ -1,4 +1,5 @@
 const express = require('express');
+// eslint-disable-next-line no-unused-expressions
 require('dotenv').config;
 const path = require('path');
 const mongoose = require('mongoose');
@@ -41,6 +42,7 @@ app.use(errLogger);
 
 app.use(errors());
 
+// eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   const { statusCode = 500, message } = err;
   res.status(statusCode).send({ message: statusCode === 500 ? 'На сервере произошла ошибка' : message });

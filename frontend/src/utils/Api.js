@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
+require('dotenv').config;
+
 class Api {
   constructor(options) {
     this._url = options.url;
@@ -124,5 +126,5 @@ class Api {
 
 // eslint-disable-next-line import/prefer-default-export
 export const api = new Api({
-  url: 'http://localhost:3002',
+  url: `${window.location.protocol}${process.env.REACT_APP_API_URL || '//localhost:3002'}`,
 });
