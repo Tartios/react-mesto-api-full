@@ -125,5 +125,5 @@ class Api {
 
 // eslint-disable-next-line import/prefer-default-export
 export const api = new Api({
-  url: `${window.location.protocol}${process.env.REACT_APP_API_URL || '//localhost:3002'}`,
+  url: `${window.location.protocol}${process.env.BASE_URL || '//localhost:3002'}`,
 });
