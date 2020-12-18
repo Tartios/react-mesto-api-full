@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3002';
+const BASE_URL = `${window.location.protocol}${process.env.REACT_APP_API_URL || '//localhost:3002'}`;
 
 const checkResponse = (response) => (response.ok ? response.json() : Promise.reject(`Ошибка: ${response.status}`));
 
