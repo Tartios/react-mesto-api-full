@@ -11,7 +11,7 @@ router.get('/crash-test', () => {
   }, 0);
 });
 
-router.post('/sign-in', celebrate({
+router.post('/sign-up', celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30),
     about: Joi.string().min(2).max(30),
@@ -21,7 +21,7 @@ router.post('/sign-in', celebrate({
   }),
 }), createUser);
 
-router.post('/sign-up', celebrate({
+router.post('/sign-in', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required(),
     password: Joi.string().required(),
