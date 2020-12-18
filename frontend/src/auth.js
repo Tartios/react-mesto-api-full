@@ -2,7 +2,7 @@ const BASE_URL = `${window.location.protocol}${process.env.REACT_APP_API_URL || 
 
 const checkResponse = (response) => (response.ok ? response.json() : Promise.reject(`Ошибка: ${response.status}`));
 
-const register = (password, email) => fetch(`${BASE_URL}/sign-in`, {
+const register = (password, email) => fetch(`${BASE_URL}/sign-up`, {
   method: 'POST',
   headers: {
     Accept: 'application/json',
@@ -12,7 +12,7 @@ const register = (password, email) => fetch(`${BASE_URL}/sign-in`, {
 })
   .then(checkResponse);
 
-const authorize = (password, email) => fetch(`${BASE_URL}/sign-up`, {
+const authorize = (password, email) => fetch(`${BASE_URL}/sign-in`, {
   method: 'POST',
   headers: {
     Accept: 'application/json',
