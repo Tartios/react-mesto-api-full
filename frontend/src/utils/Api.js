@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
-require('dotenv').config;
 
 class Api {
   constructor(options) {
