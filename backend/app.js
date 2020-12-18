@@ -1,6 +1,6 @@
 const express = require('express');
 // eslint-disable-next-line no-unused-expressions
-require('dotenv').config;
+require('dotenv').config();
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
