@@ -22,11 +22,11 @@ const authorize = (password, email) => fetch(`${BASE_URL}/sign-up`, {
 })
   .then(checkResponse);
 
-const getContent = (token) => fetch(`${BASE_URL}/users/me`, {
+const getContent = (jwt) => fetch(`${BASE_URL}/users/me`, {
   method: 'GET',
   headers: {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${token}`,
+    Authorization: `Bearer ${jwt}`,
   },
 })
   .then(checkResponse);
