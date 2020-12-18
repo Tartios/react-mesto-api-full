@@ -22,7 +22,6 @@ import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
 import { register, authorize, getContent } from "../auth.js";
 import InfoTooltipPopup from "./InfoTooltipPopup.js";
-require('dotenv').config;
 
 function App() {
   const [currentUser, setCurrentUser] = React.useState({});
