@@ -24,12 +24,6 @@ module.exports.createUser = (req, res, next) => {
     email,
     password,
   } = req.body;
-  userModel.findOne({ email })
-    .then((user) => {
-      if (user) {
-        throw new DataError('Такой пользователь уже существует.');
-      }
-    });
   bcrypt.hash(password, 10)
     .then((hash) => userModel.create({
       name,
@@ -45,5 +39,13 @@ module.exports.createUser = (req, res, next) => {
 
       res.send({ data: user });
     })
-    .catch(next);
+    .catch((err) => {
+      if (err.code === 11000) {
+        next(new DataError('Такой пользователь уже существует'));
+      } if (err.name === 'ValidationError') {
+        next(new ValidationError('Данные переданные пользователем некорректны'));
+      } else {
+        next(err);
+      }
+    });
 };

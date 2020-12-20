@@ -5,4 +5,4 @@
 - ставить/удалять лайки под фотографиями;
 - увеличивать фотографии по клику;
 Проект обладает собственными api и базой данных на mongobd;
-IP-адрес и домен: 84.201.164.158 http://tartios-mesto.students.nomoredomains.work/ http://api.tartios-mesto.students.nomoredomains.work
+IP-адрес и домен: 84.201.164.158 http://tartios.students.nomoredomains.icu http://api.tartios.students.nomoredomains.icu

@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
+const validator = require('validator');
 const { Unauthorized } = require('../errors/unauthorized.js');
 const { ValidationError } = require('../errors/validationerror.js');
 
@@ -27,9 +28,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    // validate: {
-    //   validator: validator.isEmail(),
-    // },
+    validate: {
+      validator: (v) => validator.isEmail(v),
+    },
   },
   password: {
     type: String,
@@ -38,6 +39,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
+// eslint-disable-next-line func-names
 userSchema.statics.findUserByCredentials = function (email, password) {
   if (!email || !password) {
     throw new ValidationError('Введенные данные некорректны');

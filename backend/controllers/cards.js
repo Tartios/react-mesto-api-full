@@ -1,6 +1,7 @@
 const cardModel = require('../models/card.js');
 const { NotFoundError } = require('../errors/not-found-error.js');
 const { ValidationError } = require('../errors/validationerror.js');
+const { Forbiden } = require('../errors/forbiden.js');
 
 module.exports.getCards = (req, res, next) => {
   cardModel.find()
@@ -28,15 +29,27 @@ module.exports.createCard = (req, res, next) => {
 
 module.exports.deleteCard = (req, res, next) => {
   const { _id } = req.params;
-  cardModel.findByIdAndRemove({ _id })
+  cardModel.findById(_id)
     .then((card) => {
+      if (req.user._id !== card.owner.toString()) {
+        throw new Forbiden('Удалять карточку может только ее создатель');
+      }
       if (!card) {
         throw new NotFoundError('Карточка с таким id не обнаружена');
       }
-
-      res.send({ data: card });
+      cardModel.findByIdAndRemove(_id)
+        .then((userCard) => {
+          res.send({ data: userCard });
+        })
+        .catch(next);
     })
-    .catch(next);
+    .catch((err) => {
+      if (err.kind === 'ObjectId') {
+        next(new NotFoundError('Карточка с таким id не обнаружена'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 module.exports.likeCard = (req, res, next) => cardModel.findByIdAndUpdate(
